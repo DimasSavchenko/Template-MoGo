@@ -23,6 +23,10 @@ p {
 	margin: 0;
 }
 
+blockquote {
+	border: none;
+}
+
 .color--white {
 	color: #ffffff;
 }
@@ -54,6 +58,7 @@ p {
 	align-items: center;
 	text-align: center;
 	padding-top: 110px;
+	margin-bottom: 90px;
 }
 
 .header__title {
@@ -62,7 +67,6 @@ p {
 
 .header__sub {
 	font-size: 30px;
-	margin-bottom: 90px;
 	position: relative;
 }
 
@@ -79,7 +83,11 @@ p {
 }
 
 .header__text {
+	color: #999999;
+	font-size: 15px;
+	line-height: 1.5;
 	width: 90%;	
+	margin-top: 90px;
 }
 
 /*end common styles*/
@@ -98,12 +106,6 @@ p {
 	min-height: 500px;
 	position: relative;
 }
-
-/*@media (max-width: 1199px) {
-	.container {
-		margin: 0 20px;
-	}
-}*/
 
 .header__hero {
 	display: flex;
@@ -216,24 +218,17 @@ p {
 	padding-top: 90px;
 }
 
-.header__text {
-	color: #999999;
-	font-size: 15px;
-	line-height: 1.5;
-	margin-bottom: 104px;
-}
-
 .gallery {
 	display: flex;
 }
 
-.gallery__item {
+.gallery__block {
 	width: 33.33%;
 	margin-right: 30px;
-	padding-bottom: 110px;
+	margin-bottom: 110px;
 }
 
-.gallery__item:last-child {
+.gallery__block:last-child {
 	margin-right: 0;
 }
 
@@ -760,10 +755,6 @@ p {
 
 /*CLIENTS*/
 
-.clients {
-	background-image: linear-gradient(rgba(243, 243, 243, 0.8), rgba(243, 243, 243, 0.8)), url(../img/banner-clients.png);
-}
-
 .clients__container {
 	display: flex;
 	flex-wrap: wrap;
@@ -827,8 +818,12 @@ p {
 }
 
 .blog__block {
-	width: 30%;
-	position: relative;	
+	width: 30%;	
+	padding-bottom: 120px;	
+}
+
+.blog__photo {
+	position: relative;
 }
 
 .blog__img {
@@ -836,36 +831,38 @@ p {
 }
 
 .blog__date {
-	display: flex;
-	flex-direction: column;
+	width: 60px;
+	height: 70px;
 	position: absolute;
-	top: 25%;
+	bottom: 10px;
 	z-index: 3;
 	background: #95e1d3;
-	padding: 10px 15px;
+	text-align: center;
 	transform: translate(-25%, 0);
 }
 
 .date__numb {
-	font-size: 24px;
+	display: block;
+	font-size: 30px;
 	font-weight: bold;
 }
 
 .date__month {
-	font-size: 14px;
+	display: block;
+	font-size: 15px;
 	font-family: 'Roboto';
 	font-style: italic;
 }
 
 .blog__title {
-	height: 50px;
+	height: 70px;
 	font-size: 14px;
 	font-weight: bold;
 	padding: 20px 0;
 }
 
 .blog__sub {
-	height: 100px;
+	height: 120px;
 	font-size: 15px;
 	color: #999999;
 	padding-bottom: 42px;
@@ -885,7 +882,6 @@ p {
 
 .blog__icon {
 	display: flex;
-	padding-bottom: 120px;
 }
 
 .icon__views,
@@ -898,8 +894,14 @@ p {
 	vertical-align: middle;
 }
 
+.icon__views:hover,
+.icon__comments:hover {
+	opacity: .7;
+}
+
 .icon__views {
 	background-image: url(../img/blog-views.png);
+	margin-right: 6px;
 }
 
 .icon__comments {
@@ -926,7 +928,7 @@ p {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 60px 0 80px 0;
+	padding: 60px 0;
 }
 
 .map__icon {
@@ -959,6 +961,10 @@ p {
 
 /*FOOTER*/
 
+.footer {
+	background: #f8f8f8;
+}
+
 .footer__container {
 	display: flex;
 	justify-content: space-between;
@@ -986,6 +992,10 @@ p {
 	padding-bottom: 20px;
 }
 
+.footer__followers b {
+	font-size: 18px;
+}
+
 .footer__social {
 	padding: 20px 0 40px 0;
 	border-top: 1px solid #e5e5e5;
@@ -1006,10 +1016,11 @@ p {
 	background-repeat: no-repeat;
 	background-position: center;
 	margin-right: 10px;
+	transition: transform .3s ease;
 }
 
 .social__item:hover {
-	transform: scale(1.1,1.1);
+	transform: scale(1.2,1.2);
 }
 
 .item--fb {
@@ -1045,11 +1056,12 @@ p {
 }
 
 .footer__input {
+	height: 40px;
 	font-size: 15px;
 	font-style: italic;
 	border: 1px solid #e7e7e7;
 	border-right: none;
-	padding: 16px 0;
+	padding: 0 10px;
 }
 
 ::-webkit-input-placeholder {
@@ -1057,9 +1069,11 @@ p {
 }
 
 .footer__btn {
+	height: 40px;
 	background: #95e1d3;
-	padding: 16px;
+	padding: 0 24px;
 	border: none;
+	font-weight: 600;
 }
 
 .footer__heading {
@@ -1068,6 +1082,7 @@ p {
 
 .footer-blog__item {
 	display: flex;
+	align-items: center;
 	padding-bottom: 30px;
 }
 
@@ -1105,6 +1120,8 @@ p {
 	width: 33%;
 	height: 33%;
   padding: 1px;
+  transition: transform .3s ease;
+  cursor: pointer;
 }
 
 .insta__img:hover {
@@ -1114,7 +1131,6 @@ p {
 .footer__insta {
 	display: flex;
 	flex-wrap: wrap;
-
 }
 
 .footer__sign {
@@ -1138,6 +1154,20 @@ p {
 		margin: 0 20px;
 		width: auto;
 	}
+
+	.footer__container {
+		flex-direction: column;
+	}
+
+	.footer__block {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	
+	.footer__logo,
+	.footer__heading {
+		text-align: center;
+	}
 }
 
 @media (max-width: 991px) {
@@ -1148,17 +1178,25 @@ p {
 	.facts__item {
 		width: auto;
 	}
+
+	.clients__block {
+		width: 100%;
+	}
+
+	.clients__item {
+		padding-bottom: 20px;
+	}
+	
+	.clients__data {
+		padding-right: 0;
+	}
 }
 
 @media (max-width: 767px) {
 	.header {
-		padding-top: 0;
+		padding-top: 20px;
 	}
 
-	.header__text {
-		font-size: 24px;
-	}
-	
 	.job__container {
 		padding-bottom: 0;
 	}
@@ -1184,6 +1222,7 @@ p {
 	}
 
 	.facts__numb {
+		font-size: 50px;
 		padding: 0;
 	}
 
@@ -1231,17 +1270,17 @@ p {
 
 	.blockquote__text,
 	.blockquote__cite {
-		font-size: 18px;
+		font-size: 16px;
 	}
 	
 	.gallery {
 		flex-direction: column;
 	}
 	
-	.gallery__item {
+	.gallery__block {
 		width: 100%;
 		margin-right: 0;
-		padding-bottom: 50px;
+		margin-bottom: 40px;
 	}
 	
 	.gallery__item:hover .about__img,
@@ -1250,10 +1289,7 @@ p {
 	}
 
 	.gallery__front {
-		position: static;
-		transform: scale(1);
-		order: 2;
-		background: inherit;
+		display: none;
 	}
 
 	.gallery__back {
@@ -1263,7 +1299,6 @@ p {
 	.front__text,
 	.gallery__name,
 	.gallery__subname {
-		font-size: 20px;
 		color: #333;
 	}
 
@@ -1294,44 +1329,36 @@ p {
   	visibility: hidden;
 	}
 	
-	.clients__block {
-		width: 100%;
-	}
-
-	.clients__item {
-		padding-bottom: 20px;
-	}
-	
-	.clients__data {
-		padding-right: 0;
-	}
-	
 	.blog__container {
 		flex-direction: column;
 	}
 
 	.blog__block {
 		width: 100%;
+		padding-bottom: 40px;
 	}
 
-	.footer__container {
-		flex-direction: column;
+	.blog__title,
+	.blog__sub {
+		height: auto;
 	}
-
-	.footer__block {
-		width: 100%;
-	}
-	
-	.footer__logo,
-	.footer__heading {
-		text-align: center;
-	}
-	
 }
 
 @media (max-width: 575px) {
+	.slider__text {
+		font-size: 12px;
+	}
+
+	.slider__numb {
+		display: none;
+	}
+
+	.logo__title {
+		font-size: 24px;
+	}
+	
 	.logo__desc {
-		font-size: 50px;
+		font-size: 40px;
 	}
 
 	.work__block {
@@ -1340,6 +1367,14 @@ p {
 
 	.badges__item {
 		width: 50%;
+	}
+	
+	.quote__blockquote {
+		padding: 0;
+	}
+
+	.quote__arrow {
+		display: none;
 	}
 
 	.clients__img {
